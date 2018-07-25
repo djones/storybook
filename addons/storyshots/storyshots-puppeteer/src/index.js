@@ -41,7 +41,7 @@ export const imageSnapshot = (customConfig = {}) => {
 
     const encodedKind = encodeURIComponent(context.kind);
     const encodedStoryName = encodeURIComponent(context.story);
-    const storyUrl = `/iframe.html?selectedKind=${encodedKind}&selectedStory=${encodedStoryName}`;
+    const storyUrl = `/preview.html?selectedKind=${encodedKind}&selectedStory=${encodedStoryName}`;
     const url = storybookUrl + storyUrl;
     if (!browser || !page) {
       logger.error(
