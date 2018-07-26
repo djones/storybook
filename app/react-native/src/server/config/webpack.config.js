@@ -5,8 +5,8 @@ import Dotenv from 'dotenv-webpack';
 import WatchMissingNodeModulesPlugin from 'react-dev-utils/WatchMissingNodeModulesPlugin';
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import GeneratePagePlugin from 'generate-page-webpack-plugin';
-import { getManagerHeadHtml } from '@storybook/core/src/server/utils';
 
+import { getManagerHeadHtml } from '@storybook/core/dist/server/utils';
 import { version } from '../../../package.json';
 import { includePaths, excludePaths, nodeModulesPaths } from './utils';
 
@@ -24,7 +24,7 @@ const getConfig = options => ({
   plugins: [
     new GeneratePagePlugin(
       {
-        template: require.resolve('@storybook/core/server/templates/index.html.ejs'),
+        template: require.resolve('@storybook/core/dist/server/templates/index.html.ejs'),
         // eslint-disable-next-line global-require
         parser: require('ejs'),
         filename: entry => (entry === 'manager' ? 'index' : entry),
